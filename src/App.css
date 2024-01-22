@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.Shop-Logo{
+  width: 100px !important;
+  height: 50px !important;
+}
+.card-img-top{
+  height: 250px;
+}
+.priceDecrease{
+  font-size: 12px;
+}
+
+
+
+.saleBadge{
+  top: 0.5rem; 
+  right: 0.5rem
+}
