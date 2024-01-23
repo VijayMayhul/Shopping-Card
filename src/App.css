@@ -37,6 +37,10 @@
   }
 }
 
+.main-div{
+  background-image: url("/public/Images/full_bg_img.avif");
+  background-size: contain;
+}
 .Shop-Logo{
   width: 100px !important;
   height: 50px !important;

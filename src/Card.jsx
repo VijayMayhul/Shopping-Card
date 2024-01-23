@@ -18,7 +18,7 @@ function Card({props, press}) {
                             const stars = [];
                             for (let starIndex = 0; starIndex < 5; starIndex++) {
                             stars.push(
-                                <i className={`${starIndex < props.starRating ? 'fa-solid fa-star text-warning' : 'fa-regular fa-star'}`}></i>
+                                <i key={starIndex} className={`${starIndex < props.starRating ? 'fa-solid fa-star text-warning' : 'fa-regular fa-star'}`}></i>
                             );
                             }
                             return stars;

@@ -9,7 +9,7 @@ function Nav({navDetails}) {
             <div class="container px-4 px-lg-5 py-1">
                 <a class="navbar-brand d-flex align-items-center" href="#">
                     <img src='/Images/shop_logo.png' alt='Shop-Logo' className='img-fluid Shop-Logo' />
-                    <h2 className='d-inline m-0 text-primary'>Vi-Shop</h2>
+                    <h2 className='d-inline m-0 text-primary fst-italic'>Vi-Shop</h2>
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navItems" aria-controls="navItems" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
