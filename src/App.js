@@ -11,140 +11,190 @@ import { useState } from 'react';
 
 
 function App() {
-  let [initCart, setCart] = useState(0);
-  let [initButtonText, setButtonText] = useState("Add to Cart");
 
-  let press = () => {
-    setCart((initCart+1));
-    setButtonText(("Remove from cart"));
-  };
+  const [cartData, setCartData] = useState([]);
+  const [btnText, setBtnText] = useState([]);
+  // console.log(typeof btnText);
+
+  for(let i=1;i <= 12;i++){
+    let obj = { id : i, txt : "Add to Cart"};
+    btnText.push(obj);
+    // console.log(btnText);
+  }
+  
 
   let cardDetails = [
     {
+      id : 1,
       TopSale : true,
-      cardImg : "/Images/cardImg13.jpg",
-      productName : "Indian Men Traditional Shirt",
-      starRating : 4,
-      mrp : 599,
+      cardImg : "/Images/cardImg1.jpg",
+      productName : "Kurti for Men",
+      starRating : 5,
+      mrp : 499,
       offer : 20,
-      btnTxt : initButtonText
+      btnTxt : btnText[0].txt
     },
     {
+      id : 2,
       TopSale : false,
       cardImg : "/Images/cardImg2.jpg",
-      productName : "Men Shirt",
+      productName : "Men Casual Shirt",
       starRating : 3,
-      mrp : 500,
+      mrp : 450,
       offer : 4,
-      btnTxt : initButtonText
+      btnTxt : btnText[1].txt
     },
     {
+      id : 3,
       TopSale : false,
       cardImg : "/Images/cardImg3.jpg",
       productName : "Men Tshirt - Combo",
-      starRating : 5,
-      mrp : 800,
+      starRating : 4,
+      mrp : 599,
       offer : 5,
-      btnTxt : initButtonText
+      btnTxt : btnText[2].txt
     },
     {
+      id : 4,
       TopSale : true,
       cardImg : "/Images/cardImg4.jpg",
-      productName : "Chudidhar",
-      starRating : 4,
+      productName : "Women's Chudidhar",
+      starRating : 5,
       mrp : 2000,
       offer : 40,
-      btnTxt : initButtonText
+      btnTxt : btnText[3].txt
     },
     {
+      id : 5,
       TopSale : false,
-      cardImg : "/Images/cardImg5.jpg",
-      productName : "Western Girl - Tshirt",
-      starRating : 4,
-      mrp : 1000,
+      cardImg : "/Images/cardImg5.webp",
+      productName : "Girl - Tshirt Combo",
+      starRating : 3,
+      mrp : 650,
       offer : 25,
-      btnTxt : initButtonText
+      btnTxt : btnText[4].txt
     },
     {
-      TopSale : true,
+      id : 6,
+      TopSale : false,
       cardImg : "/Images/cardImg6.jpg",
-      productName : "Girl Tshirt",
-      starRating : 5,
-      mrp : 3000,
+      productName : "Casual Girl Tshirt",
+      starRating : 4,
+      mrp : 350,
       offer : 27,
-      btnTxt : initButtonText
+      btnTxt : btnText[5].txt
     },
     {
-      TopSale : true,
+      id : 7,
+      TopSale : false,
       cardImg : "/Images/cardImg7.jpg",
-      productName : "Stylih Girl Tshirt",
-      starRating : 5,
+      productName : "Women's Blue Solid Denim Shirt",
+      starRating : 4,
       mrp : 2500,
       offer : 30,
-      btnTxt : initButtonText
+      btnTxt : btnText[6].txt
     },
     {
-      TopSale : false,
-      cardImg : "/Images/cardImg8.jpg",
-      productName : "Girl Tshirt - Combo",
-      starRating : 4,
-      mrp : 400,
-      offer : 4,
-      btnTxt : initButtonText
-    },
-    {
+      id : 8,
       TopSale : true,
-      cardImg : "/Images/cardImg9.jpg",
-      productName : "Polyster Saree",
+      cardImg : "/Images/cardImg8.jpg",
+      productName : "Lehenga Choli Half Saree For Women",
       starRating : 5,
       mrp : 4000,
+      offer : 4,
+      btnTxt : btnText[7].txt
+    },
+    {
+      id : 9,
+      TopSale : true,
+      cardImg : "/Images/cardImg9.jpg",
+      productName : "Women's Lehanga Kanjivaram Silk",
+      starRating : 5,
+      mrp : 15000,
       offer : 7,
-      btnTxt : initButtonText
+      btnTxt : btnText[8].txt
     },
     {
-      TopSale : false,
+      id : 10,
+      TopSale : true,
       cardImg : "/Images/cardImg10.jpg",
-      productName : "Traditional Saree",
+      productName : "Bridal Paithani Saree",
       starRating : 4,
-      mrp : 4500,
+      mrp : 21000,
       offer : 15,
-      btnTxt : initButtonText
+      btnTxt : btnText[9].txt
     },
     {
+      id : 11,
       TopSale : true,
       cardImg : "/Images/cardImg11.jpg",
-      productName : "Occusion Saree",
-      starRating : 3,
-      mrp : 700,
+      productName : "Women's Banarasi Silk Saree",
+      starRating : 5,
+      mrp : 27600,
       offer : 40,
-      btnTxt : initButtonText
+      btnTxt : btnText[10].txt
     },
     {
+      id : 12,
       TopSale : false,
-      cardImg : "/Images/cardImg13.jpg",
-      productName : "Traditional Shirt",
+      cardImg : "/Images/cardImg12.jpg",
+      productName : "Men's Cotton Blend Jacket",
       starRating : 4,
-      mrp : 999,
+      mrp : 1499,
       offer : 9,
-      btnTxt : initButtonText
+      btnTxt : btnText[11].txt
     }
   ];
+
+  let press = (product) => {
+    let foundButton  = btnText.find((ele)=> product.id === ele.id)
+    // console.log(btnElement);
+
+    if (foundButton .txt === "Add to Cart") {
+
+      setCartData([...cartData, product]);
+
+      setBtnText((prevBtnText) => {
+        return prevBtnText.map((btn) => {
+          if (btn.id === product.id) {
+            // console.log({ ...btn, txt: "Remove from Cart" });
+            return { ...btn, txt: "Remove from Cart" };
+          } else {
+            return btn;
+          }
+        });
+      });
+    }else if(foundButton .txt === "Remove from Cart"){
+      setCartData(cartData.filter(ele => ele.id != product.id));
+      setBtnText((prevBtnText) => {
+        return prevBtnText.map((btn) => {
+          if (btn.id === product.id) {
+            return { ...btn, txt: "Add to Cart" };
+          } else {
+            return btn;
+          }
+        });
+      });
+    }
+    
+    
+  };
 
   return (
     <>
       <header>
-        <Nav navDetails={initCart}/>
+        <Nav navDetails={cartData}/>
       </header>
       <main>
         <section>
           <Poster/>
         </section>
         <section className='py-5'>
-          <div className='container px-4 px-lg-5 mt-5'>
-            <div className='row gx-4 gx-lg-5 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center'>
+          <div className='container px-3 px-lg-4 mt-5'>
+            <div className='row gx-3 gx-lg-4 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center'>
               {
-                cardDetails.map((card)=>{
-                  return <Card props={card} press={press}/>
+                cardDetails.map((card,index)=>{
+                  return <Card key={index++} props={card} press={press}/>
                 })
               }
             </div>

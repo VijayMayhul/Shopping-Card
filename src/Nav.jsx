@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-function Nav(props) {
+function Nav({navDetails}) {
   return (
     <>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -33,7 +33,7 @@ function Nav(props) {
                             {/* <i class="bi-cart-fill me-1"></i> */}
                             <FontAwesomeIcon icon={faShoppingCart} className='me-1' />
                             Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">{props.navDetails}</span>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">{navDetails.length}</span>
                         </button>
                     </form>
                 </div>
