@@ -1,7 +1,7 @@
 
 # Shopping-Cart
 
-This is a sample Shoppin-Cart which was designed by me using React. It's Guvi-Zen class Roadmap session: Day-23 and React : Day-3 Task.
+This is a sample Shopping-Cart which was designed by me using React. It's Guvi-Zen class Roadmap session: Day-23 and React : Day-3 Task.
 
 ## Tech Stack
 
