@@ -27,7 +27,7 @@ I learned to use useState hook as well as update component elements as per the r
 
 ## Screenshots
 
-![App Screenshot](./public/Images/demo.png)
+![App Screenshot](./public/Images/demo.png)(./public/Images/demo1.png)(./public/Images/demo2.png)
 
 
 ## Setup
